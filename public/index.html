@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VietAPI Request Counter</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Smart Counter Proxy</p>
+          <h1>VietAPI Request Counter</h1>
+        </div>
+        <div class="status">
+          <span id="todayDate">--</span>
+          <span id="refreshStatus">Refreshing...</span>
+        </div>
+      </header>
+
+      <section class="grid">
+        <article class="panel wide">
+          <div class="panel-title">
+            <h2>Models with Daily Limit</h2>
+            <span id="totalRequests">0 requests today</span>
+          </div>
+          <div id="limitedModels" class="model-list empty">Loading...</div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-title">
+            <h2>Unlimited Models</h2>
+            <span>Today</span>
+          </div>
+          <div id="unlimitedModels" class="compact-list empty">Loading...</div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-title">
+            <h2>By API Key</h2>
+            <span>Today</span>
+          </div>
+          <div id="keyStats" class="compact-list empty">Loading...</div>
+        </article>
+
+        <article class="panel wide">
+          <div class="panel-title">
+            <h2>Hourly Breakdown</h2>
+            <span id="hourlyTotal">0 total</span>
+          </div>
+          <div id="hourly" class="hour-grid"></div>
+        </article>
+
+        <article class="panel wide">
+          <div class="panel-title">
+            <h2>History</h2>
+            <span>Last 7 days</span>
+          </div>
+          <div id="history" class="history-list empty">Loading...</div>
+        </article>
+
+        <article class="panel wide">
+          <div class="panel-title">
+            <h2>Recent Logs</h2>
+            <button id="refreshButton" class="icon-button" type="button" title="Refresh now">↻</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Model</th>
+                  <th>Key</th>
+                  <th>Status</th>
+                  <th>Tokens</th>
+                  <th>Latency</th>
+                </tr>
+              </thead>
+              <tbody id="logs">
+                <tr><td colspan="6">Loading...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="panel wide settings-panel">
+          <div class="panel-title">
+            <h2>Settings</h2>
+            <span id="configMeta">Config</span>
+          </div>
+          <form id="limitsForm" class="limits-form">
+            <label>
+              Model
+              <input id="modelInput" list="knownModels" placeholder="gpt-5.5" autocomplete="off">
+            </label>
+            <label>
+              Daily limit
+              <input id="limitInput" type="number" min="1" step="1" placeholder="800">
+            </label>
+            <button type="submit">Save Limit</button>
+            <button id="resetButton" class="danger-button" type="button">Reset Today</button>
+          </form>
+          <datalist id="knownModels"></datalist>
+          <div id="limitsList" class="chip-list"></div>
+        </article>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

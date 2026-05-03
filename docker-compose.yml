@@ -1,0 +1,12 @@
+services:
+  vietapi-counter:
+    build: .
+    container_name: vietapi-counter
+    restart: unless-stopped
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - TZ=Asia/Tokyo

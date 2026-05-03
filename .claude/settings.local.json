@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker compose *)",
+      "Bash(docker.exe compose *)",
+      "Bash(where.exe docker *)",
+      "Read(//c/Program Files/Docker/Docker/resources/bin/**)",
+      "Read(//c/ProgramData/DockerDesktop/version-bin/**)",
+      "Bash(cmd.exe *)"
+    ]
+  }
+}

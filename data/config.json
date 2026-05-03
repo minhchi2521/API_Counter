@@ -1,0 +1,22 @@
+{
+  "upstream": "https://api.vietapi.tech",
+  "proxyPort": 9000,
+  "dashboardPort": 9001,
+  "limits": {
+    "gpt-5.5": 800,
+    "claude-opus-4.6": 200
+  },
+  "timezone": "Asia/Tokyo",
+  "retentionDays": 30,
+  "knownModels": [
+    "gpt-5.3-codex",
+    "gpt-5.3-codex-high",
+    "gpt-5.3-codex-xhigh",
+    "gpt-5.3-high",
+    "gpt-5.3-xhigh",
+    "gpt-5.5",
+    "gpt-5.4",
+    "gpt-5.4-image",
+    "claude-opus-4.6"
+  ]
+}
